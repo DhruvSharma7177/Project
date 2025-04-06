@@ -33,3 +33,14 @@ def give_financial_advice(income, savings, expenses):
             print(f"💡 Consider reducing {category} expenses to below 20%.")
     
 give_financial_advice(income, savings, expenses)
+
+while True:
+    income, savings, expenses = collect_financial_data()
+    analyze_spending(income, savings, expenses)
+    give_financial_advice(income, savings, expenses)
+    
+    repeat = input("Do you want to enter another month’s data? (yes/no): ").strip().lower()
+    if repeat != 'yes':
+        break
+
+
