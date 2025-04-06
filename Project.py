@@ -43,4 +43,16 @@ while True:
     if repeat != 'yes':
         break
 
+import openai
 
+def get_motivational_tip():
+    openai.api_key = "OpenAi_API_Key"
+
+    response = openai.ChatCompletion.create(
+        model="gpt-4",
+        messages=[{"role": "system", "content": "Give a motivational money-saving tip."}]
+    )
+
+    return response["choices"][0]["message"]["content"]
+
+print("💰 Motivation:", get_motivational_tip())
