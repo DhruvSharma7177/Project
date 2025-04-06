@@ -23,3 +23,13 @@ def analyze_spending(income, savings, expenses):
             print(f"⚠️ Warning: High spending on {category}!")
 
 analyze_spending(income, savings, expenses)
+
+def give_financial_advice(income, savings, expenses):
+    if savings < (0.2 * income):
+        print("💡 Advice: Try to save at least 20% of your income.")
+    
+    for category, amount in expenses.items():
+        if (amount / income) > 0.4:
+            print(f"💡 Consider reducing {category} expenses to below 20%.")
+    
+give_financial_advice(income, savings, expenses)
